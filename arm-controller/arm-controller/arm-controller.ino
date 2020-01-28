@@ -130,7 +130,7 @@ void loop() {
   */
   if (joint_status == 1){ // Si arm_cb esta siendo llamado asigna el estado de joint_state a 1.
     
-    long positions[7];
+    long positions[4];
 
     positions[0] = joint_step[0];
     positions[1] = joint_step[1];
@@ -141,28 +141,7 @@ void loop() {
     steppers.moveTo(positions);
     nh.spinOnce();
     steppers.runSpeedToPosition();
-    
-    if(joint_step[6] > 0){
-      if(eff1 == 0){
-        for(pos = 0; pos < 90; pos += 1){  // Va de 0 a 89° En pasos de 1 grado                                   
-          gripper.write(pos);              // Indicarle al servo que adquiera la variable pos 
-          delay(5);                        // Esperar 5ms para que el servo llegue a la posición 
-        }        
-      }
-      eff1++;
-      eff0 = 0;
-    }
-
-    if(joint_step[6] == 0){
-      if(eff0 == 0){
-        for(pos = 90; pos>=1; pos-=1){     // Va de 89 a 0°                               
-          gripper.write(pos);              // Indicarle al servo que adquiera la variable pos
-          delay(5);                        // Esperar 5ms para que el servo llegue a la posición
-        }
-      }
-      eff0++;
-      eff1 = 0;
-    }    
+      
   }
   joint_status = 0;
 
