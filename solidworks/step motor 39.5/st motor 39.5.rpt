@@ -1,0 +1,70 @@
+*****************************************************************
+      SolidWorks Corporation - IGES Processor Status Report
+*****************************************************************
+=================================================================
+General Information
+=================================================================
+Sending System Product I.D.  : st motor 39.5.SLDASM
+Receiving System Product I.D.: st motor 39.5.SLDASM
+File Name                    : C:\Users\pc\Desktop\Printer 3D\FELIX 2.0 3d printer\step motor 39.5\st motor 39.5.IGS
+Sending System               : SolidWorks 2014
+Preprocessor Version         : SolidWorks 2014
+File Creation Date           : 140910.090933
+Model Creation Date          : 140910.090933
+Units                        : MM
+Model Space Scale            : 1
+Author                       : pc
+Organization                 : 
+
+
+=================================================================
+Entity Processing Information
+=================================================================
+
+
+=================================================================
+Precision analysis of IGES file:
+=================================================================
+  Most prevalent number of significant digits:               4
+  Highest number of significant digits:                     10
+  Average number of significant digits:                3.16717
+  Maximum distance to origin:                          1009.89
+  Minimum distance to origin:                                0
+  Effective number of significant digits:                   10
+
+
+=================================================================
+Entity Summary
+=================================================================
+-----------------------------------------------------------------
+Type Name                                         Count Converted
+---- ----                                         ----- ---------
+100  Arc                                            196       196
+102  Composite curve                                216       216
+110  Line                                           338       338
+116  Point                                            3         3
+120  Surface of revolution                           44        44
+124  Transformation matrix                          122       122
+126  Rational B-spline curve                        408       408
+128  Rational B-spline surface                       39        39
+142  Curve on a parametric surface                  108       108
+144  Trimmed parametric surface                      83        83
+308  Subfigure definition                             3         3
+314  Color definition                                 3         3
+402  Associativity instance                          13        13
+408  Singular subfigure instance                      3         3
+_________________________________________________________________
+
+
+=================================================================
+Result Summary
+=================================================================
+SolidWorks Feature Type                Count
+-----------------------                -----
+Solid feature(s)                       4
+Surface feature(s)                     0
+Curve/Sketch feature(s)                0
+--------------------------------------------
+Start time: çÂ«—‘‰»Â, ”Å «„»— 10, 2014 09:16:59
+Finish time: çÂ«—‘‰»Â, ”Å «„»— 10, 2014 09:17:00
+Processing time: 0 days, 00 hours, 00 mins, 01 secs

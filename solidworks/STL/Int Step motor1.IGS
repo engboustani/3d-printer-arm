@@ -1,0 +1,9 @@
+SolidWorks IGES file using analytic representation for surfaces         S      1
+1H,,1H;,22HInt Step motor1.SLDPRT,53HC:\Users\R&D\Desktop\robotarm\STL\IG      1
+nt Step motor1.IGS,15HSolidWorks 2019,15HSolidWorks 2019,32,308,15,308, G      2
+15,22HInt Step motor1.SLDPRT,1.,2,2HMM,50,0.125,13H191104.114247,1E-08, G      3
+499990.,3HR&D,,11,0,13H191104.114247;                                   G      4
+     314       1       0       0       0                        00000200D      1
+     314       0       8       1       0                               0D      2
+314,79.2156862745098,81.9607843137255,93.3333333333333,;               1P      1
+S      1G      4D      2P      1                                        T      1
