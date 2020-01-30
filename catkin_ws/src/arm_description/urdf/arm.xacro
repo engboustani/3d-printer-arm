@@ -1,22 +1,106 @@
 <?xml version="1.0" ?>
 
-<robot name="mrm" xmlns:xacro="http://www.ros.org/wiki/xacro">
-    <link name="base_link">
-        <vistual>
-            <origin rpy="0 0 0" xyz="0 0 0" />
-            <geometry>
-                <box size="1 1 1" />
-            </geometry>
-        </virtual>
-    </link>
+<robot name="arm" xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <link name="base_link">
+	<visual>
+            <origin rpy="1.57 0 0" xyz="-1.2 1.2 0"/>
+         <geometry>
+          <mesh filename="package://arm_description/meshes/base.STL" scale ="0.01 0.01 0.01"/>
+         </geometry>
+        </visual>
+        <collision>
+         <geometry>
+          <mesh filename="package://arm_description/meshes/base.STL" scale ="0.01 0.01 0.01"/>
+         </geometry>
+        </collision>
+  </link>
 
-    <link name="link_01">
-        <vistual>
-            <origin rpy="0 0 0" xyz="0 0 0.2" />
-            <geometry>
-                <cylinder radius="0.35" length="0.4" />
-            </geometry>
-        </virtual>
-    </link>
+  <link name="link_01">
+	<visual>
+            <origin rpy="1.57 0 0" xyz="-0.9 0.95 0"/>
+         <geometry>
+          <mesh filename="package://arm_description/meshes/link_01.STL" scale ="0.01 0.01 0.01"/>
+         </geometry>
+        </visual>
+        <collision>
+         <geometry>
+          <mesh filename="package://arm_description/meshes/link_01.STL" scale ="0.01 0.01 0.01"/>
+         </geometry>
+        </collision>
+  </link>
+
+  <link name="link_02">
+	<visual>
+            <origin rpy="1.57 0 0" xyz="-1.8 0.1 -0.5"/>
+         <geometry>
+          <mesh filename="package://arm_description/meshes/link_02.STL" scale ="0.01 0.01 0.01"/>
+         </geometry>
+        </visual>
+        <collision>
+         <geometry>
+          <mesh filename="package://arm_description/meshes/link_02.STL" scale ="0.01 0.01 0.01"/>
+         </geometry>
+        </collision>
+  </link>
+
+  <link name="link_03">
+	<visual>
+            <origin rpy="1.57 0 0" xyz="-2 0.1 -2.75"/>
+         <geometry>
+          <mesh filename="package://arm_description/meshes/link_03.STL" scale ="0.01 0.01 0.01"/>
+         </geometry>
+        </visual>
+        <collision>
+         <geometry>
+          <mesh filename="package://arm_description/meshes/link_03.STL" scale ="0.01 0.01 0.01"/>
+         </geometry>
+        </collision>
+  </link>
+
+  <link name="endeffector">
+	<visual>
+            <origin rpy="1.57 0 0" xyz="-0.95 0.1 -0.6"/>
+         <geometry>
+          <mesh filename="package://arm_description/meshes/endeffector.STL" scale ="0.01 0.01 0.01"/>
+         </geometry>
+        </visual>
+        <collision>
+         <geometry>
+          <mesh filename="package://arm_description/meshes/endeffector.STL" scale ="0.01 0.01 0.01"/>
+         </geometry>
+        </collision>
+  </link>
+
+  <joint name="joint1" type="revolute">
+    <axis xyz="0 0 1" />
+    <limit effort="1000.0" lower="-1.708" upper="1.708" velocity="1.0" />
+    <parent link="base_link"/>
+    <child link="link_01"/>
+  </joint>
+
+  <joint name="joint2" type="revolute">
+    <axis xyz="0 1 0" />
+    <limit effort="1000.0" lower="-1.708" upper="1.708" velocity="1.0" />
+    <origin xyz="-0.6 0 1.5" rpy="0 0 0" />
+    <parent link="link_01"/>
+    <child link="link_02"/>
+  </joint>
+
+  <joint name="joint3" type="revolute">
+    <axis xyz="0 1 0" />
+    <limit effort="1000.0" lower="-1.708" upper="1.708" velocity="1.0" />
+    <origin xyz="-1 0.1 2" rpy="0 0 0" />
+    <parent link="link_02"/>
+    <child link="link_03"/>
+  </joint>
+
+
+  <joint name="joint4" type="revolute">
+    <axis xyz="0 1 0" />
+    <limit effort="1000.0" lower="-1.708" upper="1.708" velocity="1.0" />
+    <origin xyz="-1.3 0.1 -2.4" rpy="0 0 0" />
+    <parent link="link_03"/>
+    <child link="endeffector"/>
+  </joint>
 
 </robot>
